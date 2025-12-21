@@ -1,6 +1,6 @@
 # r10k Configuration Module
 [![Puppet Forge](http://img.shields.io/puppetforge/v/puppet/r10k.svg)](https://forge.puppetlabs.com/puppet/r10k)
-[![Build Status](https://travis-ci.org/voxpupuli/puppet-r10k.png?branch=master)](https://travis-ci.org/voxpupuli/puppet-r10k)
+![Build Status](https://github.com/voxpupuli/puppet-r10k/actions/workflows/ci.yml/badge.svg?branch=master)
 [![Github Tag](https://img.shields.io/github/tag/voxpupuli/puppet-r10k.svg)](https://github.com/voxpupuli/puppet-r10k)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/voxpupuli/puppet-r10k?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Puppet Forge Downloads](http://img.shields.io/puppetforge/dt/puppet/r10k.svg)](https://forge.puppetlabs.com/puppet/r10k)
