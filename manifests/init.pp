@@ -34,6 +34,8 @@
 #   Hash containing settings for downloading modules from the Puppet Forge
 # @param proxy
 #   String containing proxy setting for r10k.yaml
+# @param logging
+#   Hash containing logging settings for r10k.yaml
 # @param pool_size
 #   Integer defining how many threads should be spawn while updating modules
 # @param ensure
@@ -62,8 +64,9 @@ class r10k (
   Optional[String[1]] $proxy                                  = undef,
   Integer[1] $pool_size                                       = $facts['processors']['count'],
   Optional[String[1]] $gem_source                             = undef,
-  String[1] $root_group                                                 = $r10k::params::root_group,
+  String[1] $root_group                                       = $r10k::params::root_group,
   Optional[Array[String[1]]] $postrun                         = undef,
+  Optional[Hash] $logging                                     = undef,
   Boolean $include_prerun_command                             = false,
   Boolean $include_postrun_command                            = false,
   Stdlib::Absolutepath $puppetconf_path                       = $r10k::params::puppetconf_path,

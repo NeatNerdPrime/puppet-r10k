@@ -76,6 +76,7 @@ The following parameters are available in the `r10k` class:
 * [`configfile_symlink`](#-r10k--configfile_symlink)
 * [`forge_settings`](#-r10k--forge_settings)
 * [`proxy`](#-r10k--proxy)
+* [`logging`](#-r10k--logging)
 * [`pool_size`](#-r10k--pool_size)
 * [`ensure`](#-r10k--ensure)
 
@@ -292,6 +293,14 @@ Default value: `undef`
 Data type: `Optional[String[1]]`
 
 String containing proxy setting for r10k.yaml
+
+Default value: `undef`
+
+##### <a name="-r10k--logging"></a>`logging`
+
+Data type: `Optional[Hash]`
+
+Hash containing logging settings for r10k.yaml
 
 Default value: `undef`
 
