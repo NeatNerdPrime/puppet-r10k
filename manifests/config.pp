@@ -52,6 +52,7 @@ class r10k::config {
     'deploy'    => $r10k::deploy_settings,
     'cachedir'  => $r10k::cachedir,
     'postrun'   => $r10k::postrun,
+    'logging'   => $r10k::logging,
     'sources'   => $r10k_sources,
   }.delete_undef_values
   file { 'r10k.yaml':
