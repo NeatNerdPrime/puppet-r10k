@@ -51,6 +51,6 @@ puts({
   'status' => exitstatus.zero?,
   'messages' => messages,
   'warnings' => warnings,
-  'errors' => errors
+  'errors' => errors,
 }.to_json)
 exit exitstatus

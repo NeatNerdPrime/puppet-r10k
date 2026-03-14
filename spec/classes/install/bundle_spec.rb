@@ -17,7 +17,7 @@ describe 'r10k::install::bundle', type: :class do
           expect(subject).to contain_package('r10k-bundle').with(
             ensure: 'installed',
             name: 'bundler',
-            provider: 'gem'
+            provider: 'gem',
           )
         end
 
@@ -27,7 +27,7 @@ describe 'r10k::install::bundle', type: :class do
             provider: 'git',
             path: '/tmp/r10k',
             source: 'https://github.com/adrienthebo/r10k.git',
-            revision: 'master'
+            revision: 'master',
           )
         end
 
@@ -35,7 +35,7 @@ describe 'r10k::install::bundle', type: :class do
           expect(subject).to contain_exec('r10k-install-via-bundle').with(
             command: 'bundle && bundle install --path /opt/ --binstubs /usr/local/bin/',
             cwd: '/tmp/r10k',
-            unless: 'bundle list | grep -q " r10k "'
+            unless: 'bundle list | grep -q " r10k "',
           )
         end
       end
@@ -44,7 +44,7 @@ describe 'r10k::install::bundle', type: :class do
         let :params do
           {
             revision: 'new_feature',
-            source: 'https://github.com/acidprime/r10k-fork.git'
+            source: 'https://github.com/acidprime/r10k-fork.git',
           }
         end
         let :facts do
@@ -55,7 +55,7 @@ describe 'r10k::install::bundle', type: :class do
           expect(subject).to contain_package('r10k-bundle').with(
             ensure: 'installed',
             name: 'bundler',
-            provider: 'gem'
+            provider: 'gem',
           )
         end
 
@@ -65,7 +65,7 @@ describe 'r10k::install::bundle', type: :class do
             provider: 'git',
             path: '/tmp/r10k',
             source: 'https://github.com/acidprime/r10k-fork.git',
-            revision: 'new_feature'
+            revision: 'new_feature',
           )
         end
 
@@ -73,7 +73,7 @@ describe 'r10k::install::bundle', type: :class do
           expect(subject).to contain_exec('r10k-install-via-bundle').with(
             command: 'bundle && bundle install --path /opt/ --binstubs /usr/local/bin/',
             cwd: '/tmp/r10k',
-            unless: 'bundle list | grep -q " r10k "'
+            unless: 'bundle list | grep -q " r10k "',
           )
         end
       end

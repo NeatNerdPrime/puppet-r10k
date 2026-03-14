@@ -23,7 +23,7 @@ describe 'r10k' do
       context 'with param include_prerun_command set to true' do
         let :params do
           {
-            include_prerun_command: true
+            include_prerun_command: true,
           }
         end
 
@@ -34,7 +34,7 @@ describe 'r10k' do
       context 'with param include_postrun_command set to true' do
         let :params do
           {
-            include_postrun_command: true
+            include_postrun_command: true,
           }
         end
 
@@ -49,7 +49,7 @@ describe 'r10k' do
             cachedir: '/var/cache/r10k',
             manage_modulepath: false,
             root_user: 'root',
-            root_group: 'root'
+            root_group: 'root',
           }
         end
 
@@ -59,7 +59,7 @@ describe 'r10k' do
             owner: 'root',
             group: 'root',
             mode: '0644',
-            path: '/etc/r10k.yaml'
+            path: '/etc/r10k.yaml',
           )
         end
       end
@@ -67,7 +67,7 @@ describe 'r10k' do
       context 'set to value true and a configfile specified' do
         let :params do
           {
-            manage_configfile_symlink: true
+            manage_configfile_symlink: true,
           }
         end
 
@@ -75,7 +75,7 @@ describe 'r10k' do
           expect(subject).to contain_file('symlink_r10k.yaml').with(
             ensure: 'link',
             path: '/etc/r10k.yaml',
-            target: '/etc/puppetlabs/r10k/r10k.yaml'
+            target: '/etc/puppetlabs/r10k/r10k.yaml',
           )
         end
       end
@@ -83,7 +83,7 @@ describe 'r10k' do
       context 'Managing r10k with rugged turned on via git_settings' do
         let :params do
           {
-            git_settings: { 'private_key' => '/root/.ssh/id_dsa', 'provider' => 'rugged' }
+            git_settings: { 'private_key' => '/root/.ssh/id_dsa', 'provider' => 'rugged' },
           }
         end
 
@@ -96,9 +96,9 @@ describe 'r10k' do
             git_settings: {
               repositories: [{
                 remote: 'https://github.com/voxpupuli/fake_repo',
-                proxy: 'http://some.proxy.com'
-              }]
-            }
+                proxy: 'http://some.proxy.com',
+              }],
+            },
           }
         end
 
@@ -108,7 +108,7 @@ describe 'r10k' do
       context 'manage forge settings of r10k via forge_settings' do
         let :params do
           {
-            forge_settings: { 'baseurl' => 'https://forgeapi.puppetlabs.com', 'proxy' => 'https://proxy.example.com:3128' }
+            forge_settings: { 'baseurl' => 'https://forgeapi.puppetlabs.com', 'proxy' => 'https://proxy.example.com:3128' },
           }
         end
 
@@ -123,7 +123,7 @@ describe 'r10k' do
             manage_modulepath: false,
             postrun: ['/usr/bin/curl', '-F', 'deploy=done', 'http://my-app.site/endpoint'],
             root_user: 'root',
-            root_group: 'root'
+            root_group: 'root',
           }
         end
 
@@ -133,7 +133,7 @@ describe 'r10k' do
       context 'with empty proxy' do
         let :params do
           {
-            proxy: :undef
+            proxy: :undef,
           }
         end
 
@@ -143,7 +143,7 @@ describe 'r10k' do
       context 'with proxy' do
         let :params do
           {
-            proxy: 'https://proxy.local:8080'
+            proxy: 'https://proxy.local:8080',
           }
         end
 
@@ -153,7 +153,7 @@ describe 'r10k' do
       context 'with pool_size' do
         let :params do
           {
-            pool_size: 5
+            pool_size: 5,
           }
         end
 
@@ -168,14 +168,14 @@ describe 'r10k' do
             install_options: '',
             provider: 'gem',
             version: version,
-            puppet_master: true
+            puppet_master: true,
           }
         end
 
         it do
           expect(subject).to contain_package('r10k').with(
             ensure: version,
-            provider: 'gem'
+            provider: 'gem',
           )
         end
       end
@@ -186,7 +186,7 @@ describe 'r10k' do
             provider: 'gem',
             version: version,
             install_options: [],
-            puppet_master: true
+            puppet_master: true,
           }
         end
 
@@ -194,7 +194,7 @@ describe 'r10k' do
           expect(subject).to contain_package('r10k').with(
             ensure: version,
             provider: 'gem',
-            install_options: ['--no-document']
+            install_options: ['--no-document'],
           )
         end
       end
@@ -205,7 +205,7 @@ describe 'r10k' do
             provider: 'gem',
             version: version,
             install_options: ['BOGON'],
-            puppet_master: true
+            puppet_master: true,
           }
         end
 
@@ -213,7 +213,7 @@ describe 'r10k' do
           expect(subject).to contain_package('r10k').with(
             ensure: version,
             provider: 'gem',
-            install_options: ['BOGON']
+            install_options: ['BOGON'],
           )
         end
       end
@@ -223,7 +223,7 @@ describe 'r10k' do
           {
             version: version,
             provider: 'puppet_gem',
-            install_options: ''
+            install_options: '',
           }
         end
 
@@ -232,7 +232,7 @@ describe 'r10k' do
         it do
           expect(subject).to contain_package('r10k').with(
             ensure: version,
-            provider: 'puppet_gem'
+            provider: 'puppet_gem',
           )
         end
       end
@@ -249,7 +249,7 @@ describe 'r10k' do
         it {
           is_expected.to contain_package('r10k').with(
             ensure: version,
-            provider: 'puppet_gem'
+            provider: 'puppet_gem',
           )
         }
 
@@ -257,7 +257,7 @@ describe 'r10k' do
           expect(subject).to contain_file('/usr/bin/r10k').with(
             ensure: 'link',
             target: '/opt/puppetlabs/puppet/bin/r10k',
-            require: 'Package[r10k]'
+            require: 'Package[r10k]',
           )
         end
       end
@@ -269,7 +269,7 @@ describe 'r10k' do
             version: version,
             gem_source: 'https://some.alternate.source.com/',
             install_options: [],
-            puppet_master: true
+            puppet_master: true,
           }
         end
 
@@ -277,7 +277,7 @@ describe 'r10k' do
           expect(subject).to contain_package('r10k').with(
             ensure: version,
             provider: 'gem',
-            source: 'https://some.alternate.source.com/'
+            source: 'https://some.alternate.source.com/',
           )
         end
       end
@@ -288,7 +288,7 @@ describe 'r10k' do
             version: version,
             provider: 'bundle',
             install_options: '',
-            puppet_master: true
+            puppet_master: true,
           }
         end
 

@@ -11,7 +11,7 @@ describe 'r10k::params', type: :class do
       context 'with Puppet Enterprise' do
         let :facts do
           facts.merge(
-            is_pe: true
+            is_pe: true,
           )
         end
 
