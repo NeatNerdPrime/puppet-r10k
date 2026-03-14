@@ -53,7 +53,7 @@ describe 'r10k::webhook' do
                 enabled: true,
                 max_concurrent_jobs: 10,
                 max_history_items: 20,
-              }
+              },
             },
             r10k: {
               command_path: '/opt/puppetlabs/puppet/bin/r10k',
@@ -63,7 +63,7 @@ describe 'r10k::webhook' do
               verbose: true,
               deploy_modules: true,
               generate_types: true,
-            }
+            },
           }
         end
 

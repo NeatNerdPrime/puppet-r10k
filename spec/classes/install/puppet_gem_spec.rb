@@ -17,7 +17,7 @@ describe 'r10k::install::puppet_gem', type: :class do
           expect(subject).to contain_file('/usr/bin/r10k').with(
             ensure: 'link',
             target: '/opt/puppetlabs/puppet/bin/r10k',
-            require: 'Package[r10k]'
+            require: 'Package[r10k]',
           )
         end
       end

@@ -30,8 +30,8 @@ describe 'r10k::mcollective', type: :class do
               'agent/r10k.rb',
             ],
             client_files: [
-              'application/r10k.rb'
-            ]
+              'application/r10k.rb',
+            ],
           )
         end
       end
@@ -39,7 +39,7 @@ describe 'r10k::mcollective', type: :class do
       context 'Removing the mcollective agent & application', if: facts[:os]['name'] != 'Gentoo' do
         let :params do
           {
-            ensure: 'absent'
+            ensure: 'absent',
           }
         end
 

@@ -11,7 +11,7 @@ describe 'r10k', type: :class do
       context 'with a github remote' do
         let :params do
           {
-            remote: 'git@github.com:someuser/puppet.git'
+            remote: 'git@github.com:someuser/puppet.git',
           }
         end
 
@@ -24,7 +24,7 @@ describe 'r10k', type: :class do
       context 'with mcollective', if: facts[:os]['name'] != 'Gentoo' do
         let :params do
           {
-            mcollective: true
+            mcollective: true,
           }
         end
 

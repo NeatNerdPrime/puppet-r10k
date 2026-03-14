@@ -11,7 +11,7 @@ describe 'r10k::postrun_command', type: :class do
       context 'with Puppet Enterprise' do
         let :facts do
           facts.merge(
-            is_pe: true
+            is_pe: true,
           )
         end
 
@@ -19,7 +19,7 @@ describe 'r10k::postrun_command', type: :class do
           let :params do
             {
               command: 'r10k synchronize',
-              ensure: 'present'
+              ensure: 'present',
             }
           end
 
@@ -30,7 +30,7 @@ describe 'r10k::postrun_command', type: :class do
               ensure: 'present',
               section: 'agent',
               setting: 'postrun_command',
-              value: 'r10k synchronize'
+              value: 'r10k synchronize',
             )
           end
         end
@@ -39,7 +39,7 @@ describe 'r10k::postrun_command', type: :class do
           let :params do
             {
               command: 'r10k synchronize',
-              ensure: 'absent'
+              ensure: 'absent',
             }
           end
 
@@ -50,7 +50,7 @@ describe 'r10k::postrun_command', type: :class do
               ensure: 'absent',
               section: 'agent',
               setting: 'postrun_command',
-              value: 'r10k synchronize'
+              value: 'r10k synchronize',
             )
           end
         end
@@ -65,7 +65,7 @@ describe 'r10k::postrun_command', type: :class do
               ensure: 'present',
               section: 'agent',
               setting: 'postrun_command',
-              value: 'r10k deploy environment --modules'
+              value: 'r10k deploy environment --modules',
             )
           end
         end
@@ -74,7 +74,7 @@ describe 'r10k::postrun_command', type: :class do
           let :params do
             {
               command: 'r10k21 synchronize',
-              ensure: 'present'
+              ensure: 'present',
             }
           end
 
@@ -85,7 +85,7 @@ describe 'r10k::postrun_command', type: :class do
               ensure: 'present',
               section: 'agent',
               setting: 'postrun_command',
-              value: 'r10k21 synchronize'
+              value: 'r10k21 synchronize',
             )
           end
         end
@@ -94,7 +94,7 @@ describe 'r10k::postrun_command', type: :class do
           let :params do
             {
               command: 'r10k21 synchronize',
-              ensure: 'absent'
+              ensure: 'absent',
             }
           end
 
@@ -105,7 +105,7 @@ describe 'r10k::postrun_command', type: :class do
               ensure: 'absent',
               section: 'agent',
               setting: 'postrun_command',
-              value: 'r10k21 synchronize'
+              value: 'r10k21 synchronize',
             )
           end
         end
