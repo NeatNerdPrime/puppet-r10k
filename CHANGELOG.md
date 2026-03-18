@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v15.1.0](https://github.com/voxpupuli/puppet-r10k/tree/v15.1.0) (2026-03-18)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-r10k/compare/v15.0.0...v15.1.0)
+
+**Implemented enhancements:**
+
+- Add support for logging configuration [\#702](https://github.com/voxpupuli/puppet-r10k/pull/702) ([anargam](https://github.com/anargam))
+
 ## [v15.0.0](https://github.com/voxpupuli/puppet-r10k/tree/v15.0.0) (2025-10-07)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-r10k/compare/v14.3.0...v15.0.0)
